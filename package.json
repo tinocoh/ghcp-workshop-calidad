@@ -1,0 +1,29 @@
+{
+  "name": "ghcp-workshop-calidad",
+  "version": "1.0.0",
+  "description": "Workshop practico de GitHub Copilot: Code Review, Unit Testing y AI Credits",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "jest",
+    "test:cov": "jest --coverage",
+    "test:watch": "jest --watch",
+    "ejercicio:a": "node scripts/ejercicio-a.js",
+    "ejercicio:a:reset": "node scripts/ejercicio-a-reset.js",
+    "verifica": "node scripts/verifica-entorno.js"
+  },
+  "keywords": ["copilot", "workshop", "code-review", "testing", "ai-credits"],
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^7.0.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "passWithNoTests": true,
+    "collectCoverageFrom": ["src/**/*.js", "!src/db-falsa.js"]
+  }
+}

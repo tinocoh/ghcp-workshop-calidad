@@ -1,0 +1,17 @@
+{
+  "// Nota": "Estas palancas se explican en el Bloque C. No las cambies antes de tiempo.",
+
+  "github.copilot.chat.codesearch.enabled": true,
+  "chat.agent.enabled": true,
+
+  "// Contexto acotado": "Menos archivos abiertos enviados como contexto = menos tokens = menos creditos.",
+  "github.copilot.chat.editor.temporalContext.enabled": false,
+
+  "// Guardarraiiles deterministas": "Formatear y ordenar imports al guardar evita ciclos de correccion con el agente.",
+  "editor.formatOnSave": true,
+
+  "// Pruebas": "Permite que el agente vea los resultados de Jest sin que se los pegues.",
+  "testing.automaticallyOpenTestResults": "neverOpen",
+
+  "files.eol": "\n"
+}
