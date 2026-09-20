@@ -42,6 +42,15 @@ if (rutaReal.includes('onedrive') || rutaReal.includes('dropbox') || rutaReal.in
   else mal('Falta ' + f);
 });
 
+// La app debe poder cargarse. Esto detecta un repositorio en estado inconsistente
+// (por ejemplo, un require a un modulo que todavia no existe).
+try {
+  require(path.join(raiz, 'src', 'server.js'));
+  ok('La aplicacion carga sin errores');
+} catch (e) {
+  mal('La aplicacion no carga: ' + e.message);
+}
+
 console.log('');
 if (fallos === 0) {
   console.log('Entorno listo. Nos vemos en la sesion.\n');

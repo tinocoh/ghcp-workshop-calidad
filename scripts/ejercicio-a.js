@@ -38,7 +38,9 @@ function main() {
 
   let codigo = fs.readFileSync(servidor, 'utf8');
   if (codigo.includes(MARCA)) {
-    console.log('La ruta /promociones ya estaba enganchada. Nada que hacer ahi.');
+    console.log('');
+    console.log('La ruta /promociones ya estaba enganchada.');
+    console.log('Si quieres empezar de cero, ejecuta: npm run ejercicio:a:reset');
   } else {
     codigo = codigo.replace(
       'const PUERTO =',

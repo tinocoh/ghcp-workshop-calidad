@@ -30,18 +30,6 @@ app.get('/inventario/cobertura', (req, res) => {
   res.json({ dias: inventory.diasCobertura(unidades, consumo) });
 });
 
-// --- BLOQUE A ---
-const descuentos = require('./descuentos');
-
-app.post('/promociones', (req, res) => {
-  const total = descuentos.aplicarPromociones(
-    req.body.pedido,
-    req.body.promociones,
-    req.body.historial
-  );
-  res.json({ total });
-});
-
 const PUERTO = process.env.PORT || 3000;
 
 if (require.main === module) {
