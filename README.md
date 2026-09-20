@@ -80,6 +80,7 @@ Si `npm run verifica` termina sin fallas, estas listo.
 | `scripts/` | Preparacion y verificacion de ejercicios. |
 | `.github/copilot-instructions.md` | Instrucciones del repositorio. Lo vas a mejorar en el Bloque C. |
 | `PROMPTS.md` | **Todos los prompts de la sesion, listos para copiar.** |
+| `guia-presentador/` | Guia del presentador. Si vas a conducir la sesion, empieza ahi. |
 
 ---
 
