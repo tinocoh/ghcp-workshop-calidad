@@ -173,33 +173,63 @@ que lean en voz alta cuál pusieron como hallazgo número uno.
 
 ---
 
-## Ejercicio A.4 — El complemento en la web: el pull request
+## Ejercicio A.4 — Confirma tu trabajo (local)
 
-**Minutos 45–55 · Ruta Base · Terminal y github.com**
+**Minutos 45–48 · Ruta Base · Terminal**
 
-Aquí la sesión cruza de VS Code a la web. Dilo explícitamente: **no son dos productos,
-son dos momentos del mismo flujo.**
+Hasta aquí todo ocurrió sin confirmar nada. Que cierren el ciclo con `checkout -b`,
+`add` y `commit`. El punto es que vean el commit con su propia identidad.
 
-### Pasos
+> **IMPORTANTE — leer antes de la sesión.**
+> Los participantes son **Enterprise Managed Users** de la empresa del cliente. La
+> documentación de GitHub es explícita: *"Managed user accounts cannot fork
+> repositories from outside of the enterprise"*, y tampoco pueden hacer push ni abrir
+> pull requests en repositorios ajenos a su empresa.
+>
+> Por eso **no hay fork y `git push` va a fallar**. Está previsto. Adelántate y dilo
+> tú antes de que alguien lo intente, o vas a tener treinta manos levantadas.
 
-1. Crear rama, confirmar y subir (los comandos están en `PROMPTS.md`).
-2. **Verificar la base del pull request:** debe ir de `bloque-a/promociones` a `main`
-   de **su propio fork**.
-3. Elegir el nivel de esfuerzo y pedir la revisión a Copilot.
-4. Leer los comentarios y comparar la etiqueta de severidad con el triaje de A.2.
-5. Aplicar **Commit suggestion** en un comentario con sugerencia.
-6. Probar **Fix with Copilot** en un comentario más complejo.
+**Lo que dices:**
 
-> **El error que va a cometer media sala.**
-> GitHub propone por defecto abrir el pull request contra el repositorio original, no
-> contra su fork. Diles **antes** de que lo creen que verifiquen la base. Si alguien lo
-> abre contra el upstream, que lo cierre y lo vuelva a abrir. Pero avísalo antes, no después.
+> Este repositorio es de solo lectura para ustedes, así que el push no va a funcionar.
+> No es un error suyo ni de su máquina: es una política de sus cuentas corporativas.
+>
+> En su trabajo real, este es el momento en que subirían la rama y abrirían el pull
+> request. Como aquí no podemos, se los voy a mostrar en vivo.
 
-Mientras esperan la revisión, explica el nivel de esfuerzo:
+---
+
+## Ejercicio A.5 — La revisión en el pull request (TU demostración)
+
+**Minutos 48–55 · Proyectas tú · Ellos observan**
+
+Es el único momento de la sesión en que ellos no ejecutan. Compénsalo narrando más y
+preguntando a la sala.
+
+### Preparación — HAZLO ANTES DE LA SESIÓN
+
+1. En tu fork propio, deja una rama con el cambio del ejercicio A y el **pull request
+   ya creado**, pero **sin pedir la revisión todavía**.
+2. Verifica que `.github/instructions/revision.instructions.md` esté en esa rama:
+   quieres que la revisión salga con los criterios del equipo, igual que en su A.3.
+3. Ten un **segundo** pull request con la revisión **ya completada** en otra pestaña.
+
+> **Riesgo — pedir la revisión en vivo y que tarde.**
+> Si la pides en vivo y no responde en un minuto, pierdes el momento. **Plan B:** pide
+> la revisión en la pestaña 1 para que vean el gesto, y mientras "carga" te pasas a la
+> pestaña 2 y trabajas sobre los comentarios reales. Nadie nota la diferencia y no
+> dependes de la latencia.
+
+### Qué mostrar, en este orden
+
+**1. Dónde se pide.** Barra lateral derecha, *Reviewers* → Copilot aparece como un
+compañero más. Señálalo: es el mismo lugar donde pedirían revisión a un humano.
+
+**2. El nivel de esfuerzo.** Muestra el selector Lite / Balanced antes de dar clic.
 
 > Antes de pedir la revisión pueden elegir el nivel de esfuerzo.
 >
-> **Lite** va por lo evidente: errores claros, vulnerabilidades, estilo. Es rápido y barato.
+> **Lite** va por lo evidente: errores claros, vulnerabilidades, estilo. Rápido y barato.
 >
 > **Balanced** analiza lógica compleja, código sensible a seguridad y cambios que cruzan
 > servicios, con un modelo de mayor razonamiento.
@@ -208,21 +238,31 @@ Mientras esperan la revisión, explica el nivel de esfuerzo:
 > el módulo de pagos es ahorrar en el lugar equivocado. Esa decisión es suya, y en la
 > etapa C van a entender exactamente cuánto pesa.
 
-> **Mensaje clave.** Aquí plantas la semilla de la etapa C. Cuando lleguen a los créditos,
-> ya van a tener una decisión de costo que tomaron con las manos, no una teoría.
+**3. Las etiquetas de severidad.** High / Medium / Low en cada comentario.
+**Pregunta a la sala:** *"¿coincide con el triaje que hicieron ustedes en A.2?"*
+Deja que dos o tres contesten. Eso recupera la participación que perdiste al no
+dejarlos ejecutar.
 
-> **Riesgo — la revisión del pull request tarda o no arranca.**
-> En forks recién creados, las acciones pueden tardar en habilitarse. Si a los dos minutos
-> no hay comentarios, que pidan un re-review con el botón circular junto al nombre de
-> Copilot. Si aun así nada, **no detengas la etapa**: lo importante ya ocurrió en el IDE.
-> Proyecta tu propio pull request resuelto y sigue.
+**4. Las dos formas de aplicar un hallazgo.** *Commit suggestion* (parche de una línea,
+dos clics) contra *Fix with Copilot* (abre trabajo agéntico). Aplica una de cada una
+en vivo.
 
-### Ruta Extra — A.5
+**5. Que se puede discutir.** Responde a un comentario con tu criterio y ciérralo con
+*Resolve conversation*. Quita la ansiedad de "y si me equivoco al aceptar".
 
-Si vas bien de tiempo: que respondan a un comentario de Copilot con su propio criterio y
-lo cierren con **Resolve conversation**. Los comentarios de Copilot se comportan como los
-de un humano: se pueden discutir, ignorar y cerrar. Esto quita la ansiedad de "y si me
-equivoco al aceptar".
+> **Mensaje clave.** Aquí plantas la semilla de la etapa C. Cuando lleguen a los
+> créditos, ya van a tener una decisión de costo con nombre y apellido.
+
+> **Mensaje clave.** Revisar en el IDE y revisar en el pull request no compiten:
+> cubren momentos distintos. En el IDE atrapas lo tuyo antes de que exista
+> públicamente. En el pull request queda el registro auditable que tu proceso de
+> calidad necesita.
+
+### Cierra con una pregunta abierta
+
+> ¿En cuál de los dos momentos creen que atraparían más problemas en su equipo?
+
+Es la mejor forma de terminar un bloque demostrativo: los devuelve a su contexto real.
 
 ---
 
@@ -241,14 +281,14 @@ Al terminar esta etapa, cada participante:
 - **Revisó un cambio antes de confirmarlo**, no después de que le costara tiempo a alguien más.
 - **Priorizó hallazgos** por impacto de negocio en lugar de por orden de aparición.
 - **Enseñó al repositorio** qué considera importante su equipo, con un archivo versionado.
-- **Llevó el cambio al pull request**, que es donde queda el registro auditable.
+- **Vio el mismo flujo en el pull request**, que es donde queda el registro auditable.
 
 ## Regla de tiempo
 
 > **Al minuto 55 tienes que estar cerrando esta etapa, pase lo que pase.** Si vas
-> retrasado, el sacrificio es A.5 y la discusión del pull request, **nunca la etapa B**.
-> La etapa B es la que deja el argumento de negocio. Perder el final por alargar el
-> principio es el error más caro de esta sesión.
+> retrasado, acorta tu demostración de A.5 — con mostrar severidades y *Commit
+> suggestion* basta. **Nunca sacrifiques la etapa B**: es la que deja el argumento de
+> negocio. Perder el final por alargar el principio es el error más caro de esta sesión.
 
 ## Bitácora
 
@@ -256,4 +296,4 @@ Regresa a la [Bitácora del presentador](bitacora-del-presentador.md) y marca:
 
 - [x] 1. Revisaron antes de confirmar
 - [x] 2. Vieron la diferencia con instrucciones del equipo
-- [x] 3. Llegaron al pull request
+- [x] 3. Vieron la revisión en el pull request

@@ -77,36 +77,58 @@ la diferencia son las instrucciones.
 
 ---
 
-## A.4 — El complemento en la web: el pull request
+## A.4 — Confirma tu trabajo (local)
+
+Hasta aqui todo ocurrio sin confirmar nada. Ahora cierra el ciclo como lo harias
+en tu repositorio real:
 
 ```bash
 git checkout -b bloque-a/promociones
 git add .
 git commit -m "Agrega calculo de promociones y ruta /promociones"
-git push -u origin bloque-a/promociones
 ```
 
-`[ ]` Abre tu fork en github.com. Te va a ofrecer **Compare & pull request**. Acepta.
+`[ ]` Mira el historial de tu rama:
 
-`[ ]` **Importante:** el pull request debe ir de `bloque-a/promociones` **a `main` de TU fork**,
-no al repositorio original. Si dice el nombre de otra persona en la base, cambialo.
+```bash
+git log --oneline -3
+```
 
-`[ ]` En la barra lateral derecha, junto a **Reviewers**, elige el nivel de esfuerzo
-(**Lite** o **Balanced**) y haz clic en **Request** al lado de **Copilot**.
+`[ ]` Fijate en el autor del commit. Si configuraste bien tu identidad, deberia ser
+la tuya. Es el mismo principio del Bloque A: el repositorio determina el contexto.
 
-`[ ]` Espera menos de un minuto y lee los comentarios. Fijate en la etiqueta de severidad
-(**High / Medium / Low**) de cada uno.
+> **Nota:** este repositorio es de solo lectura para ti, asi que `git push` no va a
+> funcionar. No es un error tuyo. En tu trabajo real este seria el momento de subir
+> la rama y abrir el pull request; el presentador te lo va a mostrar en vivo ahora.
 
-`[ ]` En un comentario que tenga sugerencia de cambio, aplica **Commit suggestion**.
+---
 
-`[ ]` En un comentario mas complejo, prueba **Fix with Copilot** y observa la diferencia:
-uno es un parche de una linea, el otro abre trabajo agentico.
+## A.5 — La revision en el pull request (demostracion del presentador)
 
-### Ruta extra (si te sobra tiempo)
+**No ejecutas nada aqui. Observa y toma nota.**
 
-Responde a un comentario de Copilot con tu propio criterio y ciérralo con
-**Resolve conversation**. La revision de Copilot se comporta como la de un humano:
-puedes discutirla, ignorarla o cerrarla.
+El presentador va a mostrar el mismo cambio que acabas de revisar, pero ya en un
+pull request de GitHub. Presta atencion a cuatro cosas:
+
+`[ ]` **Donde se pide la revision.** En la barra lateral derecha, junto a *Reviewers*,
+aparece **Copilot** igual que un companero de equipo.
+
+`[ ]` **El nivel de esfuerzo.** Antes de pedirla se elige **Lite** o **Balanced**.
+Lite va por lo evidente y es barato; Balanced analiza logica compleja y codigo
+sensible a seguridad, con un modelo de mayor razonamiento. Es una decision de costo.
+
+`[ ]` **Las etiquetas de severidad.** Cada comentario trae **High**, **Medium** o
+**Low**. Comparalo con el triaje que hiciste tu en A.2: ¿coinciden?
+
+`[ ]` **Las dos formas de aplicar un hallazgo.** *Commit suggestion* es un parche de
+una linea, dos clics. *Fix with Copilot* abre trabajo agentico sobre la rama. No
+cuestan lo mismo ni sirven para lo mismo.
+
+### Pregunta para la discusion
+
+La revision en el IDE (A.1) y la del pull request cubren momentos distintos del
+flujo, no compiten. ¿En cual de los dos crees que atraparias mas problemas en tu
+equipo, y por que?
 
 ---
 

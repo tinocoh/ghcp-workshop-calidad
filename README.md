@@ -41,19 +41,15 @@ Resuelvelos **antes** de la sesion. No hay tiempo para instalar nada en vivo.
 
 ### Puesta en marcha
 
-1. **Haz fork** de este repositorio a tu cuenta (boton **Fork**, arriba a la derecha).
-   Deja **tu propio usuario** como Owner. Lo necesitas en el Bloque A para abrir un
-   pull request propio.
-
-2. Clona **tu fork**:
+1. Clona el repositorio en una ruta local:
 
    ```bash
-   git clone https://github.com/TU-USUARIO/ghcp-workshop-calidad.git C:/dev/ghcp-workshop-calidad
+   git clone https://github.com/tinocoh/ghcp-workshop-calidad.git C:/dev/ghcp-workshop-calidad
    cd C:/dev/ghcp-workshop-calidad
    npm install
    ```
 
-3. Verifica:
+2. Verifica:
 
    ```bash
    npm run verifica
@@ -61,7 +57,7 @@ Resuelvelos **antes** de la sesion. No hay tiempo para instalar nada en vivo.
    npm start       # http://localhost:3000/health -> {"estado":"ok",...}
    ```
 
-4. Abre la carpeta en VS Code y **confia en los autores** cuando lo pregunte (sin eso, Copilot
+3. Abre la carpeta en VS Code y **confia en los autores** cuando lo pregunte (sin eso, Copilot
    no funciona). No tienes que instalar extensiones: en las versiones recientes de VS Code,
    GitHub Copilot ya viene integrado en el editor. Solo verifica que el icono de Copilot
    aparezca en la barra de estado y que tengas sesion iniciada.
