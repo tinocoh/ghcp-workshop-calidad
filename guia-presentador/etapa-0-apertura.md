@@ -71,6 +71,28 @@ Pregunta en voz alta: **"¿a quién le falló algo?"**. Cuenta las manos.
 - **Menos de cinco manos:** resuélvelos por el canal mientras avanzas con el resto.
 - **Más de cinco manos:** dedica tres minutos más, no más.
 
+> **Riesgo — npm bloqueado por política de PowerShell.**
+> Es el problema **más probable** de esta sesión y pega justo en el primer comando.
+> En equipos donde PowerShell no ejecuta scripts sin firma, `npm` falla con
+> *"npm.ps1 no está firmado digitalmente"* / `UnauthorizedAccess`.
+>
+> **Solución en una línea:** que escriban **`npm.cmd`** en lugar de `npm`
+> (`npm.cmd install`, `npm.cmd test`, `npm.cmd run verifica`). No requiere cambiar
+> ninguna política ni permisos de administrador.
+>
+> Tenlo escrito en el canal **antes** de empezar. Si ves más de tres manos por esto,
+> dilo a toda la sala de una vez en lugar de atender uno por uno.
+
+> **Riesgo — "destination path already exists".**
+> Le pasa a quien ya había clonado antes. No hay que volver a clonar: que entren con
+> `cd C:/dev/ghcp-workshop-calidad` y sigan desde `npm install`. Si quieren empezar
+> limpio, `Remove-Item C:/dev/ghcp-workshop-calidad -Recurse -Force`.
+
+> **Riesgo — alguien intentó hacer fork.**
+> Si alguien pregunta por el fork: **no aplica**. Sus cuentas corporativas gestionadas
+> no pueden forkear repositorios externos. Es normal que les haya fallado y no afecta
+> nada: el flujo de hoy es clonar directo. Dilo sin dramatismo y sigue.
+
 > **Riesgo — el impulso de arreglar todo.**
 > Vas a sentir la tentación de resolver los cinco problemas de entorno antes de empezar.
 > No lo hagas: gastas veinte minutos del grupo para atender al diez por ciento. Empareja
@@ -101,17 +123,22 @@ Pregunta en voz alta: **"¿a quién le falló algo?"**. Cuenta las manos.
    a los que no contesten.
 2. Corre tú mismo la sesión completa de principio a fin en una máquina limpia. Sí, completa:
    los prompts cambian de comportamiento con las versiones.
-3. Ten listo un fork propio con todo resuelto, por si necesitas mostrar el resultado esperado
-   de un ejercicio que le falló al grupo.
+3. Ten listo tu **pull request de demostración** para el ejercicio A.5, y un segundo con la
+   revisión ya completada como plan B. Está detallado en la etapa A.
 
 ### T menos 30 minutos
 
 1. Abre VS Code con el repositorio limpio, el chat de Copilot visible y el tamaño de fuente
    subido para proyección (`Ctrl+Shift+P` → Zoom In, al menos tres veces).
-2. Abre en pestañas separadas: tu fork, la tabla de precios por modelo, y la página de
-   consumo de tu cuenta.
+2. Abre en pestañas separadas: tu pull request de demostración, la tabla de precios por
+   modelo, y la página de consumo de tu cuenta.
 3. Ten esta guía en una segunda pantalla o impresa. **No la proyectes.**
-4. Pega en el canal el enlace del repositorio y el de `PROMPTS.md`.
+4. Pega en el canal el enlace del repositorio, el de `PROMPTS.md` y **el tip de `npm.cmd`**:
+
+   > Si `npm` te da error de *"no está firmado digitalmente"*, escribe `npm.cmd` en
+   > lugar de `npm`. Por ejemplo: `npm.cmd install`.
+
+   Déjalo fijado. Te va a ahorrar atender el mismo problema cinco veces por separado.
 
 ---
 

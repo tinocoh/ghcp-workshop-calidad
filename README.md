@@ -41,7 +41,10 @@ Resuelvelos **antes** de la sesion. No hay tiempo para instalar nada en vivo.
 
 ### Puesta en marcha
 
-1. Clona el repositorio en una ruta local:
+1. **Abre una terminal.** En el menu Inicio escribe `terminal` y abre la aplicacion
+   **Terminal**. Si tu equipo no la tiene, abre **Windows PowerShell**.
+
+2. Clona el repositorio. Si la carpeta `C:\dev` no existe, git la crea sola:
 
    ```bash
    git clone https://github.com/tinocoh/ghcp-workshop-calidad.git C:/dev/ghcp-workshop-calidad
@@ -49,7 +52,12 @@ Resuelvelos **antes** de la sesion. No hay tiempo para instalar nada en vivo.
    npm install
    ```
 
-2. Verifica:
+   > **Si `npm` te da un error de "no esta firmado digitalmente"**, escribe `npm.cmd`
+   > en lugar de `npm` (por ejemplo `npm.cmd install`). Algunos equipos tienen
+   > PowerShell configurado para no ejecutar scripts sin firma. Usar `npm.cmd` evita
+   > el problema sin cambiar ninguna configuracion.
+
+3. Verifica:
 
    ```bash
    npm run verifica
@@ -57,10 +65,23 @@ Resuelvelos **antes** de la sesion. No hay tiempo para instalar nada en vivo.
    npm start       # http://localhost:3000/health -> {"estado":"ok",...}
    ```
 
-3. Abre la carpeta en VS Code y **confia en los autores** cuando lo pregunte (sin eso, Copilot
-   no funciona). No tienes que instalar extensiones: en las versiones recientes de VS Code,
-   GitHub Copilot ya viene integrado en el editor. Solo verifica que el icono de Copilot
-   aparezca en la barra de estado y que tengas sesion iniciada.
+4. Abre la carpeta en VS Code (**Archivo → Abrir carpeta → `C:\dev\ghcp-workshop-calidad`**)
+   y **confia en los autores** cuando lo pregunte (sin eso, Copilot no funciona). No tienes
+   que instalar extensiones: en las versiones recientes de VS Code, GitHub Copilot ya viene
+   integrado en el editor. Solo verifica que el icono de Copilot aparezca en la barra de
+   estado y que tengas sesion iniciada.
+
+### Si ya habias clonado antes
+
+| Tu caso | Que hacer |
+|---|---|
+| Intentaste hacer fork y GitHub te lo impidio | Nada. Es lo esperado: las cuentas corporativas gestionadas no pueden forkear repositorios externos. Clona directamente. |
+| Ya clonaste y funciona | Nada. Tu copia es la correcta. |
+| Al clonar dice `destination path already exists` | Ya tenias una copia. Entra con `cd` y sigue desde `npm install`. |
+| Quieres empezar de cero | `Remove-Item C:/dev/ghcp-workshop-calidad -Recurse -Force` y vuelve a clonar. |
+
+Para confirmar que tu copia apunta al lugar correcto: `git remote -v` debe decir
+`github.com/tinocoh/ghcp-workshop-calidad`.
 
 Si `npm run verifica` termina sin fallas, estas listo.
 
