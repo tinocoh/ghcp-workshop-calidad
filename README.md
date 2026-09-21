@@ -41,8 +41,9 @@ Resuelvelos **antes** de la sesion. No hay tiempo para instalar nada en vivo.
 
 ### Puesta en marcha
 
-1. **Haz fork** de este repositorio a tu cuenta personal (boton **Fork**, arriba a la derecha).
-   Lo necesitas en el Bloque A para abrir un pull request propio.
+1. **Haz fork** de este repositorio a tu cuenta (boton **Fork**, arriba a la derecha).
+   Deja **tu propio usuario** como Owner. Lo necesitas en el Bloque A para abrir un
+   pull request propio.
 
 2. Clona **tu fork**:
 

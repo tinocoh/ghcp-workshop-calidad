@@ -109,8 +109,8 @@ las licencias.
 
 | Qué | Enlace |
 |---|---|
-| Repositorio del workshop | https://github.com/tinocoh/ghcp-workshop-calidad |
-| Prompts copiables | https://github.com/tinocoh/ghcp-workshop-calidad/blob/main/PROMPTS.md |
+| Repositorio del workshop | https://github.com/tinocodemos/ghcp-workshop-calidad |
+| Prompts copiables | https://github.com/tinocodemos/ghcp-workshop-calidad/blob/main/PROMPTS.md |
 | Precios por modelo | https://docs.github.com/en/copilot/reference/copilot-billing/models-and-pricing |
 | Optimizar uso de IA | https://docs.github.com/en/copilot/tutorials/optimize-ai-usage |
 | Facturación por AI credits | https://docs.github.com/en/copilot/concepts/billing-and-usage/organizations-and-enterprises/billing |
