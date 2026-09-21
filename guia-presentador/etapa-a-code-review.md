@@ -98,7 +98,7 @@ construida por concatenación de cadenas, un `JSON.parse` sin protección, bucle
 sobre la misma colección, y varias observaciones de estilo sobre `var` y `==`.
 
 > **Riesgo — el botón no aparece.**
-> En versiones anteriores de VS Code o de la extensión, el icono de revisión no está en
+> En versiones anteriores de VS Code, el icono de revisión no está en
 > Control de código fuente. La alternativa está en su guía: seleccionar todo el archivo
 > con `Ctrl+A`, clic derecho, menú Copilot, **Review and Comment**. Ten esa ruta lista
 > para proyectarla; en un grupo de cincuenta siempre hay tres o cuatro versiones distintas.

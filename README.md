@@ -30,7 +30,7 @@ Resuelvelos **antes** de la sesion. No hay tiempo para instalar nada en vivo.
 | Licencia de GitHub Copilot | Business o Enterprise, asignada y **activa**. Verificala entrando a github.com/settings/copilot |
 | Cuenta de GitHub | La misma que tiene la licencia, con sesion iniciada en el navegador |
 | Visual Studio Code | Version **1.120 o superior** (necesaria para ver el consumo correcto de AI credits) |
-| Extensiones | **GitHub Copilot** y **GitHub Copilot Chat**, actualizadas y con sesion iniciada |
+| Extensiones | Ninguna que instalar. En VS Code reciente **GitHub Copilot viene integrado**: solo inicia sesion |
 | Node.js | **20 o superior** |
 | Git | Cualquier version reciente, con acceso a github.com |
 
@@ -60,7 +60,10 @@ Resuelvelos **antes** de la sesion. No hay tiempo para instalar nada en vivo.
    npm start       # http://localhost:3000/health -> {"estado":"ok",...}
    ```
 
-4. Abre la carpeta en VS Code. Cuando te ofrezca instalar las extensiones recomendadas, acepta.
+4. Abre la carpeta en VS Code y **confia en los autores** cuando lo pregunte (sin eso, Copilot
+   no funciona). No tienes que instalar extensiones: en las versiones recientes de VS Code,
+   GitHub Copilot ya viene integrado en el editor. Solo verifica que el icono de Copilot
+   aparezca en la barra de estado y que tengas sesion iniciada.
 
 Si `npm run verifica` termina sin fallas, estas listo.
 

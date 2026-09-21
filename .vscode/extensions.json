@@ -1,6 +1,11 @@
 {
+  // GitHub Copilot ya no se instala como extension aparte: en las versiones
+  // recientes de VS Code viene integrado en el editor (completions, next edit
+  // suggestions, chat y agentes en un solo lugar). Solo tienes que iniciar sesion.
+  //
+  // Esta recomendacion queda por compatibilidad: si tu VS Code es anterior y
+  // todavia no lo trae integrado, la instala. Si ya lo trae, no hace nada.
   "recommendations": [
-    "github.copilot",
     "github.copilot-chat"
   ]
 }
