@@ -2,7 +2,7 @@
 
 Repositorio de trabajo para la sesion practica de 2 horas. **Tu ejecutas, el presentador guia.**
 
-El repositorio existe por una sola razon: que los 50 participantes partan exactamente
+El repositorio existe por una sola razon: que todos los participantes partan exactamente
 del mismo codigo, con los mismos defectos y la misma cobertura de pruebas en cero.
 Asi cualquier diferencia en el resultado viene de como usas Copilot, no del punto de partida.
 
@@ -44,18 +44,19 @@ Resuelvelos **antes** de la sesion. No hay tiempo para instalar nada en vivo.
 1. **Abre una terminal.** En el menu Inicio escribe `terminal` y abre la aplicacion
    **Terminal**. Si tu equipo no la tiene, abre **Windows PowerShell**.
 
-2. Clona el repositorio. Si la carpeta `C:\dev` no existe, git la crea sola:
+2. Clona el repositorio. Si la carpeta `C:\dev` no existe, git la crea sola.
+
+   > **En Windows: si `npm` te da un error de firma, usa `npm.cmd`.** Algunos equipos
+   > tienen PowerShell configurado para no ejecutar scripts sin firma y el lanzador
+   > `npm.ps1` cae en esa regla. Si ves *"npm.ps1 no esta firmado digitalmente"* o
+   > `UnauthorizedAccess`, escribe `npm.cmd` en lugar de `npm` en todos los comandos
+   > (por ejemplo `npm.cmd install`). En macOS y Linux no aplica.
 
    ```bash
    git clone https://github.com/tinocoh/ghcp-workshop-calidad.git C:/dev/ghcp-workshop-calidad
    cd C:/dev/ghcp-workshop-calidad
    npm install
    ```
-
-   > **Si `npm` te da un error de "no esta firmado digitalmente"**, escribe `npm.cmd`
-   > en lugar de `npm` (por ejemplo `npm.cmd install`). Algunos equipos tienen
-   > PowerShell configurado para no ejecutar scripts sin firma. Usar `npm.cmd` evita
-   > el problema sin cambiar ninguna configuracion.
 
 3. Verifica:
 
@@ -107,7 +108,6 @@ Si `npm run verifica` termina sin fallas, estas listo.
 | `scripts/` | Preparacion y verificacion de ejercicios. |
 | `.github/copilot-instructions.md` | Instrucciones del repositorio. Lo vas a mejorar en el Bloque C. |
 | `PROMPTS.md` | **Todos los prompts de la sesion, listos para copiar.** |
-| `guia-presentador/` | Guia del presentador. Si vas a conducir la sesion, empieza ahi. |
 
 ---
 
@@ -126,8 +126,8 @@ npm start                 # levanta la API en el puerto 3000
 
 ## Reglas de la sesion
 
-1. **Copia los prompts de `PROMPTS.md`.** No los escribas de memoria: queremos que los
-   50 obtengan resultados comparables.
+1. **Copia los prompts de `PROMPTS.md`.** No los escribas de memoria: queremos que todo
+   el grupo obtenga resultados comparables.
 2. **Lee antes de aceptar.** Todo lo que Copilot proponga pasa por tu criterio. Ese es
    justamente el musculo que venimos a ejercitar.
 3. **Si te atoras, no te quedes callado.** Cada bloque tiene una ruta base que todos
