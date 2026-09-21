@@ -62,8 +62,14 @@ Resuelvelos **antes** de la sesion. No hay tiempo para instalar nada en vivo.
    ```bash
    npm run verifica
    npm test        # debe decir "No tests found". Ese cero es el punto de partida.
-   npm start       # http://localhost:3000/health -> {"estado":"ok",...}
+   npm start       # levanta el servidor. Lee la nota de abajo antes de correrlo.
    ```
+
+   > **Con `npm start` la terminal se va a ver "congelada".** Es correcto: el servidor
+   > queda corriendo y por eso no devuelve el prompt. Abre `http://localhost:3000/health`
+   > en el navegador (debe responder `estado ok`), regresa a la terminal y presiona
+   > `Ctrl+C`. Si usaste `npm.cmd`, te preguntara *"¿Desea terminar el trabajo por lotes
+   > (S/N)?"* — escribe `S` y Enter.
 
 4. Abre la carpeta en VS Code (**Archivo → Abrir carpeta → `C:\dev\ghcp-workshop-calidad`**)
    y **confia en los autores** cuando lo pregunte (sin eso, Copilot no funciona). No tienes
