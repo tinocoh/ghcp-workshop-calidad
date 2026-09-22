@@ -5,6 +5,39 @@ Donde dice `[ ]` es una accion en la interfaz, no un prompt.
 
 ---
 
+# PASO 0 · Todos en la misma version
+
+**Lo hacemos juntos al inicio de la sesion.** No importa como hayas preparado tu
+entorno: esto deja a todo el grupo en el mismo punto de partida.
+
+## Si ya tienes el repositorio en tu maquina
+
+```bash
+cd C:/dev/ghcp-workshop-calidad
+git fetch https://github.com/tinocoh/ghcp-workshop-calidad.git main
+git reset --hard FETCH_HEAD
+npm run verifica
+```
+
+Funciona aunque hayas hecho fork, aunque tu copia este vieja y aunque hayas tocado
+archivos. **Conserva tu `node_modules`**, asi que no vuelves a instalar nada.
+
+> `git reset --hard` descarta cualquier cambio local que tengas en el repositorio.
+> Es justo lo que queremos: partir todos de cero.
+
+## Si no alcanzaste a preparar nada
+
+```bash
+git clone https://github.com/tinocoh/ghcp-workshop-calidad.git C:/dev/ghcp-workshop-calidad
+cd C:/dev/ghcp-workshop-calidad
+npm install
+npm run verifica
+```
+
+En ambos casos, `npm run verifica` debe terminar con **"Entorno listo"**.
+
+---
+
 # BLOQUE A · Code Review
 
 ## A.0 — Prepara el cambio a revisar
