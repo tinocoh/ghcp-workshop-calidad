@@ -53,40 +53,56 @@ exactamente lo que tendrias justo antes de pedirle revision a un companero.
 
 ## A.1 — Revision local, antes de confirmar nada
 
-`[ ]` Abre el panel **Control de codigo fuente** (`Ctrl+Shift+G`).
+`[ ]` Haz clic en el icono de **Control de codigo fuente** en la barra lateral izquierda
+(el de la rama, con el numero de cambios). Si prefieres el atajo es `Ctrl+Shift+G`, pero
+**primero haz clic fuera de la terminal**: si el foco esta en la terminal, el atajo no
+funciona.
 
-`[ ]` En la barra de titulo de **Cambios**, haz clic en el icono de **revision de Copilot**
-(las estrellitas). Copilot revisa el diff completo y deja comentarios en los archivos.
+`[ ]` **Ruta principal:** abre `src/descuentos.js`, haz clic **dentro del codigo**,
+presiona `Ctrl+A` para seleccionar todo, clic derecho → **Review**.
 
-`[ ]` Recorre los comentarios con `F8` / `Shift+F8`.
+> Ojo con `Ctrl+A`: si el foco esta en el Explorador, selecciona archivos en vez de
+> texto. Haz clic dentro del codigo primero.
 
-> Si no ves el boton, usa la alternativa: selecciona todo el contenido de
-> `src/descuentos.js` (`Ctrl+A`), clic derecho → **Copilot** → **Review and Comment**.
+`[ ]` Los comentarios aparecen sobre las lineas. Para verlos todos juntos, abre el panel
+**Comments** (abajo, junto a Terminal). Es mas comodo que recorrerlos con `F8`.
 
-**Cuenta cuantos hallazgos encontraste y de que tipo.** Lo vamos a comparar en A.3.
+> **No toques "Apply and Go to Next" ni "Discard and Go to Next".** En este ejercicio
+> solo se lee y se cuenta. Si aplicas cambios ahora, la comparacion de A.3 se rompe.
+
+**Cuenta cuantos hallazgos encontraste.** Lo vamos a comparar en A.3.
+
+> En versiones recientes de VS Code el boton de revision no esta en la barra de titulo
+> de Cambios. Por eso la ruta principal es el menu contextual.
 
 ---
 
-## A.2 — Triaje: no todos los hallazgos valen lo mismo
+## A.2 — Como prioriza cuando nadie le dijo que importa
 
 En el chat de Copilot, con `src/descuentos.js` abierto, modo **Ask**:
 
 ```
-Revisaste #file:src/descuentos.js. Organiza tus hallazgos en una tabla con estas
-columnas: linea, problema, severidad (alta/media/baja) y por que importa para el
-negocio, no para el estilo.
-
-Ordena de mayor a menor severidad. Si un hallazgo solo es preferencia de estilo,
-ponlo al final y marcalo como tal.
-
-Al final, dime cual arreglarias primero si solo tuvieras 10 minutos.
+Resume los hallazgos de tu revision de #file:src/descuentos.js
+y dime cual arreglarias primero.
 ```
+
+Fijate en **tres cosas** de la respuesta:
+
+1. **Que puso primero.** ¿Seguridad? ¿Dinero? ¿Otra cosa?
+2. **Que escala de severidad uso.** ¿Alta/Media/Baja? ¿Critico/Alto/Medio/Bajo?
+   Nadie se la dio: se la invento.
+3. **Cuantos creditos costo.** El dato aparece al pie de la respuesta. Anotalo.
+
+**Guarda esta respuesta.** La vas a comparar en el siguiente ejercicio.
 
 ---
 
-## A.3 — Lo mismo, pero con las reglas de tu equipo
+## A.3 — El mismo prompt, con las reglas de tu equipo
 
-Copia las instrucciones de revision al lugar donde Copilot las lee:
+`[ ]` Primero abre `ejercicios/bloque-a/revision.instructions.md` y **leelo**. Son treinta
+lineas: que es grave en este repositorio, en que orden, y que ignorar.
+
+Ahora copialo al unico lugar donde Copilot lo lee:
 
 ```bash
 mkdir .github\instructions
@@ -100,13 +116,30 @@ mkdir -p .github/instructions
 cp ejercicios/bloque-a/revision.instructions.md .github/instructions/
 ```
 
-`[ ]` Abre `.github/instructions/revision.instructions.md` y **leelo**. Eso es lo que
-tu equipo considera importante, escrito una sola vez.
+> Si pegas las dos lineas juntas, PowerShell muestra `>>` y parece colgado. Presiona
+> Enter otra vez para ejecutarlas. Si prefieres, corre una a la vez.
 
-`[ ]` Vuelve a pedir la revision de `src/descuentos.js` (como en A.1).
+`[ ]` Verifica que llego: `dir .github\instructions`
 
-**Compara con lo que anotaste en A.1.** Misma herramienta, mismo codigo, distinto resultado:
-la diferencia son las instrucciones.
+### La vuelta: el mismo prompt, otra vez
+
+`[ ]` Abre un **chat nuevo** (importante: que no arrastre el contexto anterior).
+
+`[ ]` Pega **exactamente el mismo prompt de A.2**, sin cambiarle una coma:
+
+```
+Resume los hallazgos de tu revision de #file:src/descuentos.js
+y dime cual arreglarias primero.
+```
+
+`[ ]` Compara contra la respuesta que guardaste:
+
+- ¿Que puso primero ahora?
+- ¿Que escala de severidad uso?
+- ¿Aparecieron hallazgos que antes no estaban?
+- ¿Cuantos creditos costo esta vez?
+
+**No cambiaste el prompt. Cambiaste el repositorio.**
 
 ---
 
