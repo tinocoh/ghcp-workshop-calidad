@@ -202,7 +202,12 @@ equipo, y por que?
 
 # BLOQUE B · Unit Testing
 
+> **Sigues en la rama `bloque-a/promociones`.** No cambies de rama: el archivo de
+> criterios que escribiste en el Bloque A vive ahi, y lo vas a necesitar.
+
 ## B.0 — La linea base
+
+En la **terminal integrada de VS Code**:
 
 ```bash
 npm test
@@ -216,29 +221,41 @@ Debe decir **No tests found**. Ese cero es tu punto de partida. Anotalo.
 
 `[ ]` Abre `src/pricing.js`. Leelo 30 segundos. Nadie del equipo original sigue en la empresa.
 
+`[ ]` **Abre un hilo nuevo de chat** con el boton `+` de la parte superior del panel.
+El hilo del Bloque A venia de una conversacion de analisis y arrastra esa inercia:
+explica en lugar de actuar.
+
 En el chat de Copilot, modo **Agent**:
 
 ```
-/tests #file:src/pricing.js
+Crea el archivo tests/pricing.test.js con pruebas unitarias en Jest para las
+tres funciones exportadas de #file:src/pricing.js
 
-Genera pruebas unitarias con Jest para las tres funciones exportadas.
-
-Requisitos:
-- Crea el archivo en tests/pricing.test.js
-- Agrupa con describe() por funcion y usa it() con nombres que describan el
-  comportamiento esperado, en espanol
+- Agrupa con describe() por funcion y usa it() con nombres en espanol que
+  describan el comportamiento esperado
 - Cubre el camino feliz de cada funcion y al menos un caso limite por funcion
-- No modifiques src/pricing.js todavia
-- Al terminar, ejecuta npm test y muestrame el resultado
+- No modifiques src/pricing.js
+
+Escribe el archivo en disco y despues ejecuta npm test y muestrame el resultado.
 ```
+
+**Por que el prompt empieza con "Crea el archivo".** El comando `/tests` tiene su
+propio flujo: genera el codigo y te lo propone en el chat, pero no lo escribe en
+disco. Compite con las herramientas del agente y gana. Con el verbo al inicio y
+"escribe el archivo en disco" al final, el agente actua.
 
 ```bash
 npm test
 ```
 
+Deben pasar todas. Ese verde es una trampa: Copilot probo lo que el codigo **hace**,
+no lo que el negocio **necesita**.
+
 ---
 
 ## B.2 — Donde de verdad duele: los casos limite
+
+Sigue en **el mismo hilo** que B.1: quieres que recuerde las pruebas que acaba de escribir.
 
 ```
 Ahora agrega a tests/pricing.test.js pruebas para estos casos limite de calc():
@@ -260,6 +277,10 @@ Ejecuta npm test y dime cuales fallan y por que.
 **Esto es el punto del bloque.** Las pruebas que fallan no estan mal escritas:
 estan revelando defectos que llevaban anios en produccion.
 
+Fijate en el que produce un **total negativo**. Ahora vuelve a abrir el
+`revision.instructions.md` que escribiste en el Bloque A y lee la regla 1.
+La escribiste sin haber visto este archivo.
+
 ---
 
 ## B.3 — Del defecto a la correccion
@@ -276,29 +297,41 @@ Corrige src/pricing.js para que pase todas, respetando las convenciones de
 No cambies las pruebas. Ejecuta npm test al terminar.
 ```
 
+**La frase "no cambies las pruebas" no es un adorno.** Sin ella, el camino mas corto
+al verde es modificar la prueba en lugar de arreglar el codigo.
+
 ---
 
 ## B.4 — Cobertura: de cero a numero real
+
+En la **terminal integrada de VS Code** (la misma donde corriste `npm test`):
 
 ```bash
 npm run test:cov
 ```
 
-Mira la tabla. Despues, en el chat:
+Mira la tabla que imprime Jest. Fijate en dos cosas: el porcentaje de **All files**,
+y la fila de `descuentos.js` — el archivo del Bloque A.
+
+Despues, en el chat:
 
 ```
-Este es el reporte de cobertura de npm run test:cov:
+Ejecuta npm run test:cov.
 
-[pega aqui la tabla completa]
-
-Dime exactamente que ramas de src/pricing.js siguen sin cubrir y escribe solo
-las pruebas necesarias para cerrarlas. No inventes pruebas de relleno para
-subir el porcentaje.
+Con la tabla de cobertura que obtengas, dime exactamente que ramas de
+src/pricing.js siguen sin cubrir y escribe solo las pruebas necesarias
+para cerrarlas. No inventes pruebas de relleno para subir el porcentaje.
 ```
+
+**La ultima linea es la importante.** Sin ella, el camino mas corto a un porcentaje
+bonito son pruebas de adorno que no prueban nada.
 
 ---
 
 ## B.5 — Ruta extra: prueba de la API
+
+> **Opcional.** Solo si terminaste B.4 antes que el resto. No es parte del recorrido;
+> esta aqui para que no te quedes esperando. `supertest` ya viene instalado.
 
 ```
 Escribe tests/server.test.js usando supertest sobre #file:src/server.js.
