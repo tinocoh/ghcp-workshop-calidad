@@ -80,15 +80,36 @@ Resuelvelos **antes** de la sesion. No hay tiempo para instalar nada en vivo.
 
 ### Si ya habias clonado antes
 
+> **Leelo aunque tu copia funcione.** Si clonaste antes del dia de la sesion, tu copia
+> esta desactualizada aunque corra sin errores: cambiaron los prompts de los ejercicios.
+
+Dentro de la carpeta del proyecto:
+
+```bash
+git fetch https://github.com/tinocoh/ghcp-workshop-calidad.git main
+git checkout -f -B main FETCH_HEAD
+
+npm run verifica
+```
+
+Funciona igual si clonaste el repositorio original, si clonaste tu propio fork, o si ya
+ejecutaste ejercicios. Usa la direccion completa a proposito, no `origin`, para que
+sirva en los tres casos sin cambiar nada. Conserva `node_modules`.
+
+> La bandera `-f` descarta cambios sin confirmar en los archivos del repositorio. Es
+> deliberado: el objetivo de este paso es que todos partan del mismo punto. Si tienes
+> trabajo propio que quieras conservar, confirmalo antes con `git commit`.
+
 | Tu caso | Que hacer |
 |---|---|
-| Intentaste hacer fork y GitHub te lo impidio | Nada. Es lo esperado: las cuentas corporativas gestionadas no pueden forkear repositorios externos. Clona directamente. |
-| Ya clonaste y funciona | Nada. Tu copia es la correcta. |
-| Al clonar dice `destination path already exists` | Ya tenias una copia. Entra con `cd` y sigue desde `npm install`. |
+| Ya clonaste y funciona | Corre los comandos de arriba de todos modos. |
+| Hiciste fork y clonaste tu fork | Los mismos comandos. No cambies nada. |
+| Intentaste hacer fork y GitHub te lo impidio | Nada. Algunas cuentas corporativas gestionadas no pueden forkear repositorios externos. No necesitas fork. |
+| Al clonar dice `destination path already exists` | Ya tenias una copia. Entra con `cd` y corre los comandos de arriba. |
 | Quieres empezar de cero | `Remove-Item C:/dev/ghcp-workshop-calidad -Recurse -Force` y vuelve a clonar. |
 
-Para confirmar que tu copia apunta al lugar correcto: `git remote -v` debe decir
-`github.com/tinocoh/ghcp-workshop-calidad`.
+Para confirmar que quedaste al dia: `git log --oneline -1` debe mencionar el Bloque B,
+y la carpeta `guia-presentador` ya no debe existir.
 
 Si `npm run verifica` termina sin fallas, estas listo.
 

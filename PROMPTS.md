@@ -15,7 +15,7 @@ entorno: esto deja a todo el grupo en el mismo punto de partida.
 ```bash
 cd C:/dev/ghcp-workshop-calidad
 git fetch https://github.com/tinocoh/ghcp-workshop-calidad.git main
-git checkout -B main FETCH_HEAD
+git checkout -f -B main FETCH_HEAD
 npm run verifica
 ```
 
@@ -23,7 +23,7 @@ Funciona aunque hayas hecho fork, aunque tu copia este vieja, aunque hayas tocad
 archivos y aunque ya hayas hecho ramas o commits. **Conserva tu `node_modules`**, asi que
 no vuelves a instalar nada.
 
-> `git checkout -B main FETCH_HEAD` te devuelve a la rama `main` con el contenido exacto
+> `git checkout -f -B main FETCH_HEAD` te devuelve a la rama `main` con el contenido exacto
 > del repositorio, descartando cualquier cambio local. Es justo lo que queremos: partir
 > todos de cero.
 
