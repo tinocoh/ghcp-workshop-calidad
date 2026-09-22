@@ -15,15 +15,17 @@ entorno: esto deja a todo el grupo en el mismo punto de partida.
 ```bash
 cd C:/dev/ghcp-workshop-calidad
 git fetch https://github.com/tinocoh/ghcp-workshop-calidad.git main
-git reset --hard FETCH_HEAD
+git checkout -B main FETCH_HEAD
 npm run verifica
 ```
 
-Funciona aunque hayas hecho fork, aunque tu copia este vieja y aunque hayas tocado
-archivos. **Conserva tu `node_modules`**, asi que no vuelves a instalar nada.
+Funciona aunque hayas hecho fork, aunque tu copia este vieja, aunque hayas tocado
+archivos y aunque ya hayas hecho ramas o commits. **Conserva tu `node_modules`**, asi que
+no vuelves a instalar nada.
 
-> `git reset --hard` descarta cualquier cambio local que tengas en el repositorio.
-> Es justo lo que queremos: partir todos de cero.
+> `git checkout -B main FETCH_HEAD` te devuelve a la rama `main` con el contenido exacto
+> del repositorio, descartando cualquier cambio local. Es justo lo que queremos: partir
+> todos de cero.
 
 ## Si no alcanzaste a preparar nada
 
@@ -149,7 +151,7 @@ Hasta aqui todo ocurrio sin confirmar nada. Ahora cierra el ciclo como lo harias
 en tu repositorio real:
 
 ```bash
-git checkout -b bloque-a/promociones
+git checkout -B bloque-a/promociones
 git add .
 git commit -m "Agrega calculo de promociones y ruta /promociones"
 ```
